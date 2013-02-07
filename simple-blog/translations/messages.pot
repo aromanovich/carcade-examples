@@ -1,0 +1,14 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+#: _base.html:20
+msgid "Main menu"
+msgstr "Основное меню"
+
+#: _base.html:11
+msgid "Carcade example"
+msgstr "Пример использования Carcade"
+
+#: one.html:4 page.html:4 two.html:4
+msgid "Hello, i'm"
+msgstr "Привет, я"

@@ -1,0 +1,3 @@
+simple-blog/www
+simple-blog/.build-*
+*.pyc

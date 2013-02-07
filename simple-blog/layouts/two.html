@@ -1,0 +1,26 @@
+{% extends '_base.html' %}
+
+{% block content %}
+  <p>{% trans %}Hello, i'm{% endtrans %} two.html!</p>
+
+  <ul>
+    {% for page in CHILDREN %}
+      <li>
+        <a href="{{ url_for(page.PATH) }}">
+          {{ page.NAME }}
+          ({{ page.datetime and page.datetime.strftime('%Y-%m-%d') }})
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="pagination">
+    <ul>
+      {% for page in SIBLINGS %}
+        <li {% if page.PATH == PATH %}class="active"{% endif %}>
+        <a href="{{ url_for(page.PATH) }}">{{ loop.index }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

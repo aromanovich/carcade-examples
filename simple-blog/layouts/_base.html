@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>carcade example</title>
+    {% assets 'css' %}
+      <link rel="stylesheet" href="{{ ASSET_URL }}">
+    {% endassets %}
+  </head>
+  <body>
+    <a href="{{ url_for('one') }}"><h2>{{ _('Carcade example') }}</h2></a>
+    <ul class="nav nav-pills">
+      <li class="{% if LANGUAGE == 'en' %}active{% endif %}">
+        <a href="{{ url_for(PATH, language='en') }}">Eng</a>
+      </li>
+      <li class="{% if LANGUAGE == 'ru' %}active{% endif %}">
+        <a href="{{ url_for(PATH, language='ru') }}">Рус</a>
+      </li>
+    </ul>
+    <h4>{{ _('Main menu') }}</h4>
+    <ul class="nav nav-pills">
+      {% for page in ROOT.CHILDREN %}
+        {% set is_active = PATH.startswith(page.PATH) -%}
+        <li class="{% if is_active %}active{% endif %}">
+          <a href="{{ url_for(page.PATH) }}">{{ _(page.NAME)|capitalize }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    
+    <article>
+      {% block content %}
+      {% endblock %}
+    </article>
+  </body>
+</html>
