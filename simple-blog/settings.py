@@ -20,10 +20,10 @@ BUNDLES = {
 }
 
 PAGINATION = {
-    'two/*': 3,
+    'two': 3,
 }
 
 ORDERING = {
     '*': ['one', 'two', 'three', 'four'],
-    'two/*': 'alphabetically',
+    'two': 'alphabetically',
 }

@@ -6,7 +6,7 @@ msgid "Main menu"
 msgstr "Основное меню"
 
 #: _base.html:11
-msgid "carcade example"
+msgid "Carcade example"
 msgstr "Пример Carcade"
 
 #: one.html:4 page.html:4 two.html:4
